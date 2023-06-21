@@ -1,4 +1,4 @@
-package com.shoponline.elastic.entity;
+package com.shoponline.elastic.view;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;

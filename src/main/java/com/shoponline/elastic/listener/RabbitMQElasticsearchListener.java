@@ -2,7 +2,7 @@ package com.shoponline.elastic.listener;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.shoponline.elastic.entity.Inventory;
+import com.shoponline.elastic.view.Inventory;
 import com.shoponline.elastic.service.InventoryEsService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -9,7 +9,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
-import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.*;
 
 import java.util.UUID;
 
@@ -18,6 +18,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Document(indexName = "inventory")
+@Setting(settingPath = "/settings.json")
 public class InventoryEs {
 
     @Id
@@ -26,8 +27,10 @@ public class InventoryEs {
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private String id;
 
-    private UUID fileId;
+    @JsonProperty("inventory_id")
+    private UUID inventoryId;
 
+    @Field(type = FieldType.Text, analyzer = "i_prefix", searchAnalyzer = "q_prefix")
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private String data;
 }
