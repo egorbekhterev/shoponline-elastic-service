@@ -1,0 +1,21 @@
+{
+  "properties": {
+    "id": {
+      "type": "keyword"
+    },
+    "inventory_id": {
+      "type": "keyword"
+    },
+    "data": {
+      "type": "text",
+      "analyzer": "standard",
+      "fields": {
+        "prefix": {
+          "type": "text",
+          "analyzer": "i_prefix",
+          "search_analyzer": "q_prefix"
+        }
+      }
+    }
+  }
+}

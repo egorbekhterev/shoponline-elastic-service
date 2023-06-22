@@ -19,6 +19,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Document(indexName = "inventory")
 @Setting(settingPath = "/settings.json")
+@Mapping(mappingPath = "/mappings.json")
 public class InventoryEs {
 
     @Id
