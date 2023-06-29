@@ -15,8 +15,7 @@ public class ElasticConfiguration {
     @Bean
     public RestHighLevelClient elasticClient() {
         String elasticHost = System.getenv("ELASTIC_HOST");
-        int elasticPort = Integer.parseInt(System.getenv("ELASTIC_PORT"));
         return new RestHighLevelClient(RestClient.builder(
-                new HttpHost(elasticHost, elasticPort, "http")));
+                new HttpHost(elasticHost, 9200, "http")));
     }
 }

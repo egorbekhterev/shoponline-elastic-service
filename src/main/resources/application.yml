@@ -1,5 +1,18 @@
+server:
+  port: 8100
 spring:
   application:
     name: elastic-service
-  config:
-    import: optional:configserver:http://configserver:8071
+  rabbitmq:
+    host: ${RABBITMQ_HOST}
+    port: 5672
+    username: guest
+    password: guest
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    enabled-by-default: true
